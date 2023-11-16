@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  crate1:
+    image: crate
+    container_name: crate1
+    volumes:
+    - ./data1:/data
+    - ./config/master.yml:/crate/config/crate.yml
+    ports:
+    - "4200:4200"
+    - "4300:4300"
+    - "5432:5432"
+  crate2:
+    image: crate
+    container_name: crate2
+    volumes:
+    - ./data2:/data
+    - ./config/node.yml:/crate/config/crate.yml
+    ports:
+    - "4201:4200"
+    - "4301:4300"
+    - "5433:5432"
+  crate3:
+    image: crate
+    container_name: crate3
+    volumes:
+    - "./data3:/data"
+    - "./config/node.yml:/crate/config/crate.yml"
+    ports:
+    - "4202:4200"
+    - "4302:4300"
+    - "5434:5432"
+  
+
+
+networks:
+  crateDB:
+    external: true
