@@ -4,7 +4,6 @@ node.data: true
 http.port: 4200
 psql.port: 5432
 transport.tcp.port: 4300
-#discovery.zen.ping.unicast.hosts: ["crate1"]
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 gateway.expected_nodes: 3
