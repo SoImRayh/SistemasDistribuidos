@@ -1,0 +1,16 @@
+CREATE TABLE categoria (
+    categoriaid integer PRIMARY KEY,
+    nome character varying(80) NOT NULL,
+    imagemurl character varying(300) NOT NULL
+);
+
+CREATE TABLE produto (
+    produtoid integer PRIMARY KEY,
+    nome character varying(80) NOT NULL,
+    descricao character varying(300) NOT NULL,
+    preco float NOT NULL,
+    imagemurl character varying(300) NOT NULL,
+    estoque real NOT NULL,
+    datacadastro timestamp with time zone NOT NULL,
+    categoriaid integer NOT NULL
+);
